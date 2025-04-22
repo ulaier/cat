@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI小猫模拟养成</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI小猫模拟养成</h1>
+            <p>通过描述生成你专属的小猫，并照顾它成长！</p >
+        </header>
+
+        <main>
+            <section class="cat-generation">
+                <div class="cat-display">
+                    <div id="cat-image-container">
+                        < img id="cat-image" src="" alt="生成的小猫图像">
+                        <div id="loading" class="hidden">生成中...</div>
+                    </div>
+                    <div id="cat-stats">
+                        <h3>小猫属性</h3>
+                        <p><strong>名字:</strong> <span id="cat-name">未命名</span></p >
+                        <p><strong>年龄:</strong> <span id="cat-age">0天</span></p >
+                        <p><strong>健康:</strong> <span id="cat-health">100%</span></p >
+                        <p><strong>快乐:</strong> <span id="cat-happiness">100%</span></p >
+                    </div>
+                </div>
+
+                <div class="cat-form">
+                    <h2>创建你的小猫</h2>
+                    <form id="cat-form">
+                        <div class="form-group">
+                            <label for="cat-name-input">小猫名字:</label>
+                            <input type="text" id="cat-name-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cat-description">描述你的小猫:</label>
+                            <textarea id="cat-description" rows="4" required placeholder="例如: 一只蓝眼睛的白色长毛猫，有灰色斑点，看起来很优雅"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cat-fur">毛发类型:</label>
+                                <select id="cat-fur">
+                                    <option value="长毛">长毛</option>
+                                    <option value="短毛" selected>短毛</option>
+                                    <option value="卷毛">卷毛</option>
+                                    <option value="无毛">无毛</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cat-color">主要颜色:</label>
+                                <select id="cat-color">
+                                    <option value="白色">白色</option>
+                                    <option value="黑色">黑色</option>
+                                    <option value="灰色">灰色</option>
+                                    <option value="橘色">橘色</option>
+                                    <option value="三花">三花</option>
+                                    <option value="虎斑">虎斑</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="generate-btn">生成小猫</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="cat-care hidden" id="care-section">
+                <h2>照顾你的小猫</h2>
+                <div class="care-actions">
+                    <button id="feed-btn">喂食</button>
+                    <button id="play-btn">玩耍</button>
+                    <button id="clean-btn">清洁</button>
+                    <button id="sleep-btn">睡觉</button>
+                </div>
+                
+                <div class="cat-log">
+                    <h3>小猫日志</h3>
+                    <div id="log-messages"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
